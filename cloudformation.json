@@ -177,15 +177,15 @@
                                             {
                                                 "Ref": "DBName"
                                             },
-                                            ".* TO ‘",
+                                            ".* TO '",
                                             {
                                                 "Ref": "DBUser"
                                             },
-                                            "’@localhost IDENTIFIED BY ‘",
+                                            "'@localhost IDENTIFIED BY '",
                                             {
                                                 "Ref": "DBPassword"
                                             },
-                                            "’;\n"
+                                            "';\n"
                                         ]
                                     ]
                                 },
@@ -266,17 +266,17 @@
                         }
                     },
                     "Configure": {
-                        "co mands": {
+                        "commands": {
                             "01_set_mysql_root_password": {
-                                "co mand": {
+                                "command": {
                                     "Fn::Join": [
                                         "",
                                         [
-                                            "mysqladmin -u root password ‘",
+                                            "mysqladmin -u root password '",
                                             {
                                                 "Ref": "DBRootPassword"
                                             },
-                                            "’"
+                                            "'"
                                         ]
                                     ]
                                 },
@@ -288,25 +288,25 @@
                                             {
                                                 "Ref": "DBName"
                                             },
-                                            " -u root --password=’",
+                                            " -u root --password='",
                                             {
                                                 "Ref": "DBRootPassword"
                                             },
-                                            "’ >/dev/null 2>&1 </dev/null); (( $? != 0 ))"
+                                            "' >/dev/null 2>&1 </dev/null); (( $? != 0 ))"
                                         ]
                                     ]
                                 }
                             },
                             "02_create_database": {
-                                "co mand": {
+                                "command": {
                                     "Fn::Join": [
                                         "",
                                         [
-                                            "mysql -u root --password=’",
+                                            "mysql -u root --password='",
                                             {
                                                 "Ref": "DBRootPassword"
                                             },
-                                            "’ < /tmp/setup.mysql"
+                                            "' < /tmp/setup.mysql"
                                         ]
                                     ]
                                 },
@@ -318,11 +318,11 @@
                                             {
                                                 "Ref": "DBName"
                                             },
-                                            " -u root --password=’",
+                                            " -u root --password='",
                                             {
                                                 "Ref": "DBRootPassword"
                                             },
-                                            "’ >/dev/null 2>&1 </dev/null); (( $? != 0 ))"
+                                            "' >/dev/null 2>&1 </dev/null); (( $? != 0 ))"
                                         ]
                                     ]
                                 }
